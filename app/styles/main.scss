@@ -1,0 +1,239 @@
+$gray-light: #9799A6;
+
+
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F2F5F7;
+}
+
+.wrap{
+  width: 94%;
+  margin: 0 auto;
+}
+
+header{
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// menu
+
+.logo{
+  margin-bottom: 20px;
+}
+
+.menu__lista__iten a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu__lista__iten{
+  border: 1px solid $gray-light;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: block;
+  transition: .5s;
+}
+
+// fim menu
+
+// inicio conteudo principal
+
+.content{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &__title {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.cards {
+
+    &__lista__iten {
+      height: 100px;
+      background-color: #fff;
+      text-align: center;
+      margin: 1%;
+      transition: .3s;
+      box-shadow: 2px 2px 2px 2px #ccc;
+      position: relative;
+
+      a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 50px;
+          margin: 10px auto;
+        }
+      }
+      &:nth-child(even) a:before{
+          background: url(../images/copo1.svg) no-repeat;
+        }
+
+      &:nth-child(odd) a:before{
+          background: url(../images/copo2.svg) no-repeat;
+        }
+      }
+      &__lista__iten:hover {
+        box-shadow: 4px 4px 4px 4px #ccc;
+      }
+    }
+
+
+
+
+// fim do conteudo principal
+
+.video{
+  background-color: #5E9EDC;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: #fff;
+
+  &__embed{
+    max-width: 100%;
+  }
+}
+
+.vantagens{
+  font-size:1.3em;
+  line-height: 2;
+
+  &__title{
+    font-size: 1.2em;
+    font-weight: 800;
+  }
+  &__button{
+    border-radius: 8px;
+    background-color: #EC6E5A;
+    display: block;
+    color: #fff;
+    border: none;
+    font-size: .8em;
+    outline: none;
+    padding: 20px;
+    margin-top: 30px;
+  }
+}
+
+
+// fim da seçao de video e vantagens
+
+// Inicio do rodape
+  // inicio do mapa de Cursos
+.footer__mapa-cursos{
+  background-color: #324c64;
+  padding-top: 20px;
+  color: #fff;
+}
+
+.mapa-cursos__title--grande{
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.mapa-cursos__backend__iten, .mapa-cursos__frontend__iten, .mapa-cursos__frameworks__iten, .mapa-cursos__banco-de-dados__iten{
+  text-decoration: none;
+  color: inherit;
+  margin-top: 10px;
+  font-size: .9em;
+}
+
+.mapa-cursos__backend__title, .mapa-cursos__frontend__title, .mapa-cursos__frameworks__title, .mapa-cursos__banco-de-dados__title{
+  font-weight: 700;
+  font-size: 1.3em;
+  margin: .9em 0;
+  padding-left: .3em;
+  padding-top: 2em;
+  padding-bottom: .2em;
+}
+
+.mapa-cursos__backend__title{
+  color: #EC6E5A;
+  border-left: 4px solid #ec6e5a;
+}
+
+.mapa-cursos__frontend__title{
+  color: #AD85BF;
+  border-left: 4px solid #AD85BF;
+}
+
+.mapa-cursos__frameworks__title{
+  color: #5EC6F3;
+  border-left: 4px solid #5EC6F3;
+}
+
+.mapa-cursos__banco-de-dados__title{
+  color: #25D285;
+  border-left: 4px solid #25D285;
+}
+
+  // fim do mapa dos Cursos
+
+.footer{
+  margin-top: 30px;
+  background-color: #F2F5F7;
+  padding: 20px 0;
+}
+
+.footer__form{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer__form label[for=email-contato]{
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 10px;
+  display: block;
+
+}
+
+.footer__form__legend{
+  margin-bottom: 10px;
+}
+
+.footer__form__fieldset__input{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
+}
+
+.footer__form__fieldset__submit{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #4DBA7A;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.footer__form__fieldset__submit, .footer__form__fieldset__input{
+  outline: 0;
+  border: 1px solid #4DBA7A;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+// comentario de quem come cu

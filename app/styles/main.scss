@@ -20,31 +20,39 @@ header{
 
 // menu
 
-.logo{
-  margin-bottom: 20px;
+.header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.menu__lista__iten a{
-  text-decoration: none;
-  color: inherit;
-}
 
-.menu__lista__iten{
-  border: 1px solid $gray-light;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: block;
-  transition: .5s;
-}
+.menu{
 
+  &__lista{
+    display: flex;
+    align-items: center;
+  }
+
+  &__iten{
+      margin-left: 10px;
+      border: 1px solid $gray-light;
+      border-radius: 5px;
+      padding: 10px;
+      transition: .5s;
+
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+  }
+}
 // fim menu
 
 // inicio conteudo principal
 
 .content{
   margin-top: 20px;
-  margin-bottom: 20px;
 
   &__title {
     font-weight: bold;
@@ -56,51 +64,70 @@ header{
 
 .cards {
 
-    &__lista__iten {
-      height: 100px;
-      background-color: #fff;
-      text-align: center;
-      margin: 1%;
-      transition: .3s;
-      box-shadow: 2px 2px 2px 2px #ccc;
-      position: relative;
+  &__lista{
+    display: flex;
+    flex-flow: wrap;
+    margin-bottom: 20px;
+  }
 
-      a {
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
+  &__lista__iten {
+    width: 23%;
+    height: 100px;
+    background-color: #fff;
+    text-align: center;
+    margin: 1%;
+    transition: .3s;
+    box-shadow: 2px 2px 2px 2px #ccc;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &:before {
+        content: '';
         display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        &:before {
-          content: '';
-          display: block;
-          width: 50px;
-          height: 50px;
-          margin: 10px auto;
-        }
-      }
-      &:nth-child(even) a:before{
-          background: url(../images/copo1.svg) no-repeat;
-        }
-
-      &:nth-child(odd) a:before{
-          background: url(../images/copo2.svg) no-repeat;
-        }
-      }
-      &__lista__iten:hover {
-        box-shadow: 4px 4px 4px 4px #ccc;
+        width: 50px;
+        height: 50px;
+        margin: 10px auto;
       }
     }
+
+    &:nth-child(4n){
+      margin-right: 0px;
+    }
+    &:nth-child(4n+1){
+      margin-left: 0px;
+    }
+    &:nth-child(even) a:before{
+      background: url(../images/copo1.svg) no-repeat;
+    }
+
+    &:nth-child(odd) a:before{
+      background: url(../images/copo2.svg) no-repeat;
+    }
+    }
+    &__lista__iten:hover {
+      box-shadow: 4px 4px 4px 4px #ccc;
+    }
+  }
 
 
 
 
 // fim do conteudo principal
+
+.video .wrap{
+  display: flex;
+  justify-content: space-around;
+}
 
 .video{
   background-color: #5E9EDC;
@@ -110,17 +137,29 @@ header{
 
   &__embed{
     max-width: 100%;
+    flex-grow: 2;
   }
 }
 
 .vantagens{
   font-size:1.3em;
   line-height: 2;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-left: 20px;
+  text-align: center;
 
   &__title{
     font-size: 1.2em;
     font-weight: 800;
   }
+
+  &__lista{
+    flex-grow: 1;
+  }
+
   &__button{
     border-radius: 8px;
     background-color: #EC6E5A;
@@ -129,7 +168,7 @@ header{
     border: none;
     font-size: .8em;
     outline: none;
-    padding: 20px;
+    padding: 10px;
     margin-top: 30px;
   }
 }
@@ -139,33 +178,48 @@ header{
 
 // Inicio do rodape
   // inicio do mapa de Cursos
+.mapa-cursos{
+  padding-bottom: 20px;
+  justify-content: space-between;
+
+  &__content{
+    display: flex;
+    flex-flow: column wrap;
+    height: 250px;
+  }
+
+  &__title--grande{
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
 .footer__mapa-cursos{
   background-color: #324c64;
   padding-top: 20px;
   color: #fff;
 }
 
-.mapa-cursos__title--grande{
-    font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.mapa-cursos__backend__iten, .mapa-cursos__frontend__iten, .mapa-cursos__frameworks__iten, .mapa-cursos__banco-de-dados__iten{
+.mapa-cursos__backend__iten,
+.mapa-cursos__frontend__iten,
+.mapa-cursos__frameworks__iten,
+.mapa-cursos__banco-de-dados__iten{
   text-decoration: none;
   color: inherit;
   margin-top: 10px;
   font-size: .9em;
 }
 
-.mapa-cursos__backend__title, .mapa-cursos__frontend__title, .mapa-cursos__frameworks__title, .mapa-cursos__banco-de-dados__title{
+.mapa-cursos__backend__title,
+.mapa-cursos__frontend__title,
+.mapa-cursos__frameworks__title,
+.mapa-cursos__banco-de-dados__title{
   font-weight: 700;
   font-size: 1.3em;
   margin: .9em 0;
   padding-left: .3em;
-  padding-top: 2em;
-  padding-bottom: .2em;
 }
 
 .mapa-cursos__backend__title{
@@ -191,49 +245,127 @@ header{
   // fim do mapa dos Cursos
 
 .footer{
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #F2F5F7;
   padding: 20px 0;
+
+  & .wrap{
+    display: flex;
+  }
+
+  &__logos__lista{
+    display: flex;
+    align-items: center;
+    width: 71%;
+    justify-content: space-around;
+  }
+
+  &__form{
+    width: 23%;
+    display:flex;
+    justify-content: space-around;
+
+    label [for=email-contato]{
+      font-weight: bold;
+      font-size: 14px;
+      color: #000;
+      display: block;
+    }
+
+    &__legend{
+      margin-bottom: 10px;
+    }
+
+    &__fieldset{
+      display: flex;
+    }
+
+    &__fieldset__input{
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      padding: 10px;
+    }
+
+    &__fieldset__submit{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: #4DBA7A;
+      color: #fff;
+      cursor: pointer;
+      padding: 10px;
+    }
+  }
 }
 
-.footer__form{
-  margin-top: 20px;
-  text-align: center;
-}
-
-.footer__form label[for=email-contato]{
-  font-weight: bold;
-  font-size: 14px;
-  color: #000;
-  margin-bottom: 10px;
-  display: block;
-
-}
-
-.footer__form__legend{
-  margin-bottom: 10px;
-}
-
+.footer__form__fieldset__submit,
 .footer__form__fieldset__input{
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  padding: 10px;
-}
-
-.footer__form__fieldset__submit{
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background-color: #4DBA7A;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.footer__form__fieldset__submit, .footer__form__fieldset__input{
   outline: 0;
   border: 1px solid #4DBA7A;
   box-sizing: border-box;
   font-size: 16px;
 }
 
-// comentario de quem come cu
+
+// Inicio do css para mobile
+@media(max-width: 400px) {
+  .header .wrap, .menu__lista, .cards__lista, .video .wrap, .footer__logos__lista{
+    flex-flow: column;
+    align-items: initial;
+    text-align: center;
+  }
+
+  .menu__iten{
+    border: 0px solid $gray-light;
+    border-radius: 0px;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: 10px;
+
+    &:nth-child(5){
+      order: -1;
+    }
+  }
+
+
+
+  .cards__lista__iten, .vantagens{
+    width: 100%;
+    margin: 5px auto;
+  }
+
+  .mapa-cursos__content{
+    flex-flow: column;
+    align-items: initial;
+    text-align: left;
+    height: auto;
+  }
+
+  .footer .wrap{
+    flex-flow: column;
+  }
+
+  .footer__logos__lista{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer__logos__itens{
+    margin-bottom: 10px;
+  }
+
+  .footer__form{
+    width: 100%;
+    text-align: center;
+    // flex-flow: column;
+  }
+
+  .footer__form__fieldset__submit{
+    width: 30%;
+  }
+
+  .footer__form__fieldset__input{
+    width: 70%;
+  }
+
+
+}
